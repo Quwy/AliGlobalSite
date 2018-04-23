@@ -1,0 +1,21 @@
+{
+
+  "manifest_version": 2,
+  "name": "Aliexpress Global Site",
+  "description": "Rewrite any localized Aliexpress link to the untranslated version",
+  "version": "1.0",
+  "homepage_url": "https://github.com/Quwy/AliGlobalSite.git",
+  "permissions": ["notifications"],
+
+  "icons": {
+    "48": "icons/ali-48.png",
+    "96": "icons/ali-96.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["ali_rewrite.js"]
+    }
+  ]
+}
