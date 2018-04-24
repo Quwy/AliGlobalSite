@@ -15,8 +15,8 @@ function click(e) {
                  "no", "fa", "pl", "pt", "ro", "ru", "sr", "sk", "sl", "es", "sw", "sv", "ta", "te", "th", "tr", "uk", "ur", "vi", "cy", "yi"];
 
   
-    if((parts = target.href.match(/^(\S*?)(https?:\/\/)?([a-z]{2}(?:\-[a-z]{2})?)(\.aliexpress\.com\S*)$/i)) && langs.indexOf(parts[3].toLowerCase()) >= 0) {
-      target.href = parts[1] + parts[2] + "www" + parts[4];
+    if((parts = target.href.match(/^(\S*?(?:^|(?:https?(?:\:|%3a)(?:(?:\/\/)|(?:%2f%2f)))))([a-z]{2}(?:\-[a-z]{2})?)(\.aliexpress\.com\S*)$/i)) && langs.indexOf(parts[2].toLowerCase()) >= 0) {
+      target.href = parts[1] + "www" + parts[3];
     }
   }
 }
