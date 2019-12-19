@@ -1,20 +1,23 @@
 {
+    "manifest_version": 2,
+    "name": "Aliexpress Global Site",
+    "description": "Redirects any localized Aliexpress link to the global (english) version",
+    "version": "1.4",
+    "homepage_url": "https://github.com/IlyaEG/AliGlobalSite.git",
 
-  "manifest_version": 2,
-  "name": "Aliexpress Global Site",
-  "description": "Rewrite any localized Aliexpress link to the untranslated version",
-  "version": "1.3",
-  "homepage_url": "https://github.com/Quwy/AliGlobalSite.git",
+    "icons": {
+        "48": "icons/ali-48.png",
+        "96": "icons/ali-96.png"
+    },
 
-  "icons": {
-    "48": "icons/ali-48.png",
-    "96": "icons/ali-96.png"
-  },
+    "permissions": [
+        "*://*.aliexpress.com/*",
+        "*://*.aliexpress.ru/*"
+    ],
 
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["ali_rewrite.js"]
-    }
-  ]
+    "content_scripts": [{
+            "matches": ["*://*.aliexpress.com/*", "*://*.aliexpress.ru/*"],
+            "js": ["ali_redirect.js"]
+        }
+    ]
 }
